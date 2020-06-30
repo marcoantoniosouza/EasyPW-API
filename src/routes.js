@@ -12,8 +12,9 @@ routes.post("/users", user.create);
 routes.post("/login", user.login);
 
 const pass = new Passes();
-routes.get ("/passes", pass.index);
-routes.post("/passes", pass.create);
-routes.put ("/passes", pass.update);
+routes.get   ("/passes", pass.index);
+routes.post  ("/passes", pass.create);
+routes.put   ("/passes", pass.update);
+routes.delete("/passes", pass.delete);
 
 module.exports = routes;

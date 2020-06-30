@@ -58,6 +58,22 @@ class Pass{
             return response.send();
         }   
     }
+
+    async delete(request, response){
+        const authHeader = request.get('auth');
+        if (authHeader) {
+            try {
+                const oldPass = await Model.deleteOne({_id: request.body._id});
+                return response.json({status: "OK!"});
+            } catch (error) {
+                response.status(400);
+                return response.json({message: 'Erro Inesperado'});
+            }
+        } else {
+            response.status(403);
+            return response.send();
+        }   
+    }
 };
 
 module.exports = Pass;
