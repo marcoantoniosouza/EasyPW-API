@@ -1,5 +1,6 @@
 const express = require('express');
 const Users = require('./Model/Users');
+const Passes = require('./Model/Passes');
 
 const routes = express.Router();
 
@@ -9,5 +10,10 @@ const user = new Users();
 routes.get("/users", user.index);
 routes.post("/users", user.create);
 routes.post("/login", user.login);
+
+const pass = new Passes();
+routes.get("/passes", pass.index);
+routes.post("/passes", pass.create);
+routes.post("/pass", pass.update);
 
 module.exports = routes;

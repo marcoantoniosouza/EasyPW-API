@@ -48,7 +48,7 @@ class User{
             return response.json({authHash : user.authHash});
         } else {
             response.status(401);
-            return response.json();
+            return response.send();
         }
         
     }
