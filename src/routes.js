@@ -15,6 +15,6 @@ const pass = new Passes();
 routes.get   ("/passes", pass.index);
 routes.post  ("/passes", pass.create);
 routes.put   ("/passes", pass.update);
-routes.delete("/passes", pass.delete);
+routes.delete("/passes/:id", pass.delete);
 
 module.exports = routes;

@@ -63,7 +63,7 @@ class Pass{
         const authHeader = request.get('auth');
         if (authHeader) {
             try {
-                const oldPass = await Model.deleteOne({_id: request.body._id});
+                const oldPass = await Model.deleteOne({_id: request.params.id});
                 return response.json({status: "OK!"});
             } catch (error) {
                 response.status(400);
