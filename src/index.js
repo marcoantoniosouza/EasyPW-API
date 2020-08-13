@@ -14,6 +14,6 @@ app.use(routes);
 
 const port = process.env.listenPort;
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log('Listen on http://localhost:' + port + '/');
 });
