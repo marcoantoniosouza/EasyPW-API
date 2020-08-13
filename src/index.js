@@ -12,8 +12,8 @@ app.use(basicAuth({
 
 app.use(routes);
 
-const port = process.env.listenPort;
+const port = process.env.PORT || 3333;
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(port, () => {
     console.log('Listen on http://localhost:' + port + '/');
 });
