@@ -7,12 +7,12 @@ const app = express();
 app.use(express.json());
 
 app.use(basicAuth({
-    users: { "Paula": "74ccfc6e39eee939e818625ed419550c50d51865" }
+    users: JSON.parse(process.env.basicAuth)
 }));
 
 app.use(routes);
 
-const port = 3333;
+const port = process.env.listenPort;
 
 app.listen(port, () => {
     console.log('Listen on http://localhost:' + port + '/');
