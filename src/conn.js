@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-mongoose.connect('mongodb://localhost:27017/PaulaPass', {useNewUrlParser: true, useUnifiedTopology: true});
+dotenv.config();
+
+mongoose.connect(process.env.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 module.exports = mongoose;
